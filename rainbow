@@ -311,7 +311,7 @@ def apply_filters(line):
 
         # Apply filter for each match.
         for match in pattern_filter['regex'].finditer(line):
-            line = line.replace(match.group(),pattern_filter['pattern_start'] + match.group() + pattern_filter['pattern_end'])
+            line = line.replace(match.group(pattern_filter['regex'].groups),pattern_filter['pattern_start'] + match.group(pattern_filter['regex'].groups) + pattern_filter['pattern_end'])
 
     return line.rstrip()
 
